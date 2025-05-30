@@ -103,24 +103,39 @@
 					<div class="box">
 						<form method="post" action="#">
 							<div class="row gtr-50 gtr-uniform">
-								<div class="col-6 col-12-mobilep">
-									<input type="text" name="name" id="name" value="" placeholder="Name" />
-								</div>
-								<div class="col-6 col-12-mobilep">
-									<input type="email" name="email" id="email" value="" placeholder="Email" />
-								</div>
-								<div class="col-12">
-									<input type="text" name="subject" id="subject" value="" placeholder="Subject" />
-								</div>
-								<div class="col-12">
-									<textarea name="message" id="message" placeholder="Enter your message" rows="6"></textarea>
-								</div>
-								<div class="col-12">
-									<ul class="actions special">
-										<li><input type="submit" value="Send Message" /></li>
-									</ul>
-								</div>
-							</div>
+  <!-- Name (unchanged) -->
+  <div class="col-6 col-12-mobilep">
+    <input type="text" name="name" id="name" value="" placeholder="Name" />
+  </div>
+
+  <!-- IC Number (replacing Email) -->
+  <div class="col-6 col-12-mobilep">
+    <input type="text" name="icnumber" id="icnumber" value="" placeholder="IC Number" />
+  </div>
+
+  <!-- Phone Number (new) -->
+  <div class="col-12">
+    <input type="text" name="phone" id="phone" value="" placeholder="Phone Number" />
+  </div>
+
+  <!-- License Type (replacing Subject) -->
+  <div class="col-12">
+    <input type="text" name="license" id="license" value="" placeholder="License Type" />
+  </div>
+
+  <!-- Address (replacing Message) -->
+  <div class="col-12">
+    <textarea name="address" id="address" placeholder="Enter your address" rows="6"></textarea>
+  </div>
+
+  <!-- Submit Button -->
+  <div class="col-12">
+    <ul class="actions special">
+      <li><input type="submit" value="Send Message" /></li>
+    </ul>
+  </div>
+</div>
+
 						</form>
 					</div>
 				</section>
@@ -186,12 +201,12 @@
         <span class="close-button">&times;</span>
         <h2>Sign Up</h2>
         <form>
-            <input type="email" placeholder="Email Address" required><br><br>
-            <input type="password" placeholder="Password" required><br><br>
-            <div style="text-align: center;">
-                <input type="submit" value="Sign Up">
-            </div>
-        </form>
+  <input type="text" placeholder="IC Number" required><br><br>
+  <input type="text" placeholder="Phone Number" required><br><br>
+  <div style="text-align: center;">
+    <input type="submit" value="Sign Up">
+  </div>
+</form>
     </div>
 </div>
 
