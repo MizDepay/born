@@ -48,6 +48,19 @@
     border-radius: 5px;
   }
 
+.modal-content input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background: #grey;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .modal-content input[type="submit"]:hover {
+    background: #246b45;
+  }
 
 
   .close {
@@ -100,7 +113,8 @@
 									</li>
 								</ul>
 							</li>
-							<input type="submit" value="Sign Up" class="button primary fit">
+							<li><a href="#" class="button" onclick="openModal()">Sign Up</a></li>
+
 
 
 						</ul>
@@ -193,8 +207,9 @@
   };
 </script>
 
-<!-- Sign-Up Modal -->
 
+
+<!-- Sign-Up Modal -->
 <div id="signupModal" class="modal">
   <div class="modal-content">
     <span class="close" onclick="closeModal()">&times;</span>
@@ -206,10 +221,11 @@
       <label for="password">Password:</label>
       <input type="password" id="password" name="password" required>
       <br />
-      <input type="submit" value="Sign Up" class="button primary fit">
+      <input type="submit" value="Sign Up">
     </form>
   </div>
 </div>
+
 
 
 	</body>
