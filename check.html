@@ -1,0 +1,220 @@
+<!DOCTYPE HTML>
+<!--
+	Alpha by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Contact - Alpha by HTML5 UP</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+
+		
+		<style>
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 9999;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0, 0, 0, 0.6);
+    }
+
+    .modal-content {
+        background-color: white;
+        margin: 10% auto;
+        padding: 20px;
+        border-radius: 8px;
+        width: 300px;
+        text-align: center;
+    }
+
+    .close-button {
+        float: right;
+        font-size: 24px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    .close-button:hover {
+        color: red;
+    }
+
+   .modal-content input[type="submit"] {
+    background-color: #444;
+    color: white;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    display: inline-block;
+    width: auto;
+    text-align: center;
+    line-height: 1.2; /* FIX: Align text vertically */
+    vertical-align: middle; /* Align in the middle */
+    margin-top: 10px;
+}
+
+</style>
+	</head>
+	<body class="is-preload">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+				<header id="header">
+					<h1><a href="index.html">E-Licensing</a> by Muhammad Hamizan</h1>
+					<nav id="nav">
+						<ul>
+							<li><a href="index.html">Home</a></li>
+							<li>
+								<a href="#" class="icon solid fa-angle-down">Layouts</a>
+								<ul>
+									<li><a href="generic.html">Application</a></li>
+									<li><a href="elements.html">Documentation</a></li>
+									<li><a href="contact.html">Information</a></li>
+									<li>
+										<a href="#">Submenu</a>
+										<ul>
+											<li><a href="#">Option One</a></li>
+											<li><a href="#">Option Two</a></li>
+											<li><a href="#">Option Three</a></li>
+											<li><a href="#">Option Four</a></li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+							<li><a href="#" class="button open-signup">Sign Up</a></li>
+						</ul>
+					</nav>
+				</header>
+
+			<!-- Main -->
+				<section id="main" class="container medium">
+					<header>
+						<h2>User Information</h2>
+						<p>Hello Mr/Ms welcome to E-Licensing User Information and Please Completed The Detail.</p>
+					</header>
+					<div class="box">
+						<form method="post" action="#" enctype="multipart/form-data">
+							<div class="row gtr-50 gtr-uniform">
+  <!-- Name (unchanged) -->
+  <div class="col-6 col-12-mobilep">
+    <input type="text" name="name" id="name" value="" placeholder="Name" />
+  </div>
+
+  <!-- IC Number (replacing Email) -->
+  <div class="col-6 col-12-mobilep">
+    <input type="text" name="icnumber" id="icnumber" value="" placeholder="IC Number" />
+  </div>
+
+  <!-- Phone Number (new) -->
+  <div class="col-12">
+    <input type="text" name="phone" id="phone" value="" placeholder="Phone Number" />
+  </div>
+
+  <!-- License Type (replacing Subject) -->
+  <div class="col-12">
+    <input type="text" name="license" id="license" value="" placeholder="License Type" />
+  </div>
+
+  <!-- Address (replacing Message) -->
+  <div class="col-12">
+    <textarea name="address" id="address" placeholder="Enter your address" rows="6"></textarea>
+  </div>
+<div class="col-12">
+  <label for="document">Upload Documents:</label>
+  <input type="file" name="document[]" id="document" multiple />
+</div>
+  <!-- Submit Button -->
+  <div class="col-12">
+    <ul class="actions special">
+      <li><input type="submit" value="Send Message" /></li>
+    </ul>
+  </div>
+</div>
+
+						</form>
+					</div>
+					
+				</section>
+
+			<!-- Footer -->
+				<footer id="footer">
+					<ul class="icons">
+	<li><span class="icon solid fa-phone"></span> 1-800-88-0442</li>
+	<li><span class="icon solid fa-phone"></span> +606 9781 261</li>
+	<li><span class="icon solid fa-fax"></span> +606 9782 670</li>
+	<li>
+      <span class="icon solid fa-envelope"></span> 
+      <a href="mailto:mdtgk@johor.gov.my" style="color: black; text-decoration: none;">mdtgk@johor.gov.my</a>
+    </li>
+</ul>
+	
+					<ul class="copyright">
+						<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
+				</footer>
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+		<script>
+	document.addEventListener("DOMContentLoaded", function () {
+		const modal = document.getElementById("signupModal");
+		const openButtons = document.querySelectorAll(".open-signup");
+		const closeButton = document.querySelector(".close-button");
+
+		openButtons.forEach(button => {
+			button.addEventListener("click", function (e) {
+				e.preventDefault();
+				modal.style.display = "block";
+			});
+		});
+
+		if (closeButton) {
+			closeButton.addEventListener("click", function () {
+				modal.style.display = "none";
+			});
+		}
+
+		window.onclick = function (e) {
+			if (e.target === modal) {
+				modal.style.display = "none";
+			}
+		};
+	});
+</script>
+
+
+
+
+<!-- Sign-Up Modal -->
+<div id="signupModal" class="modal">
+    <div class="modal-content">
+        <span class="close-button">&times;</span>
+        <h2>Sign Up</h2>
+        <form>
+  <input type="email" placeholder="E-mail" required><br><br>
+  <input type="password" placeholder="Passowrd" required><br><br>
+  <div style="text-align: center;">
+    <input type="submit" value="Sign Up">
+  </div>
+</form>
+    </div>
+</div>
+
+	</body>
+</html>
