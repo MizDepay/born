@@ -97,14 +97,11 @@
 			<!-- Main -->
 				<section id="main" class="container medium">
   <header>
-    <h2>License Application Status</h2>
-    <p>Check the status of submitted applications below.</p>
+    <h2>License Approval Status</h2>
+    <p>Track each stage of your license process below.</p>
   </header>
 
-<div class="box">
-						<form method="get" action="payment.html" enctype="multipart/form-data">
-
-							<div class="row gtr-50 gtr-uniform">
+  <div class="box">
     <div class="table-wrapper">
       <table>
         <thead>
@@ -112,8 +109,9 @@
             <th>Name</th>
             <th>License Type</th>
             <th>Address</th>
-            <th>Date</th>
-            <th>Status</th>
+            <th>General Check</th>
+            <th>Vendor Check</th>
+            <th>Send for Payment</th>
           </tr>
         </thead>
         <tbody>
@@ -121,28 +119,29 @@
             <td>Ahmad Rizal</td>
             <td>Business Premises</td>
             <td>Jalan Meranti, Tangkak</td>
-            <td>05/06/2025</td>
             <td><span class="button small" style="background-color: #28a745; color: white;">Approved</span></td>
+            <td><span class="button small" style="background-color: #ffc107; color: black;">Pending</span></td>
+            <td><span class="button small" style="background-color: #dc3545; color: white;">Rejected</span></td>
           </tr>
           <tr>
             <td>Siti Aisyah</td>
             <td>Hawk License</td>
             <td>Kampung Parit Medan</td>
-            <td>04/06/2025</td>
+            <td><span class="button small" style="background-color: #28a745; color: white;">Approved</span></td>
+            <td><span class="button small" style="background-color: #28a745; color: white;">Approved</span></td>
             <td><span class="button small" style="background-color: #ffc107; color: black;">Pending</span></td>
-          </tr>
-          <tr>
-            <td>Lim Wei Hong</td>
-            <td>Dog License</td>
-            <td>Jalan Kota, Tangkak</td>
-            <td>03/06/2025</td>
-            <td><span class="button small" style="background-color: #dc3545; color: white;">Rejected</span></td>
           </tr>
         </tbody>
       </table>
     </div>
+
+    <!-- Submit Button -->
+    <div style="text-align: center; margin-top: 30px;">
+      <a href="check.html" class="button primary">Submit</a>
+    </div>
   </div>
 </section>
+
 
 
 			<!-- Footer -->
