@@ -96,53 +96,51 @@
 
 			<!-- Main -->
 				<section id="main" class="container medium">
-					<header>
-						<h2>Check</h2>
-						<p>Hello Mr/Ms welcome to E-Licensing and Check Your License Approval and Make Payment</p>
-					</header>
-					<div class="box">
-						<form method="get" action="payment.html" enctype="multipart/form-data">
-							<div class="row gtr-50 gtr-uniform">
-  <!-- Name (unchanged) -->
-  <div class="col-6 col-12-mobilep">
-    <input type="text" name="name" id="name" value="" placeholder="Name" />
-  </div>
+  <header>
+    <h2>License Application Status</h2>
+    <p>Check the status of submitted applications below.</p>
+  </header>
 
-  <!-- IC Number (replacing Email) -->
-  <div class="col-6 col-12-mobilep">
-    <input type="text" name="icnumber" id="icnumber" value="" placeholder="IC Number" />
+  <div class="box">
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>License Type</th>
+            <th>Address</th>
+            <th>Date</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Ahmad Rizal</td>
+            <td>Business Premises</td>
+            <td>Jalan Meranti, Tangkak</td>
+            <td>05/06/2025</td>
+            <td><span class="button small" style="background-color: #28a745; color: white;">Approved</span></td>
+          </tr>
+          <tr>
+            <td>Siti Aisyah</td>
+            <td>Hawk License</td>
+            <td>Kampung Parit Medan</td>
+            <td>04/06/2025</td>
+            <td><span class="button small" style="background-color: #ffc107; color: black;">Pending</span></td>
+          </tr>
+          <tr>
+            <td>Lim Wei Hong</td>
+            <td>Dog License</td>
+            <td>Jalan Kota, Tangkak</td>
+            <td>03/06/2025</td>
+            <td><span class="button small" style="background-color: #dc3545; color: white;">Rejected</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
+</section>
 
-  <!-- Phone Number (new) -->
-  <div class="col-12">
-    <input type="text" name="phone" id="phone" value="" placeholder="Phone Number" />
-  </div>
-
-  <!-- License Type (replacing Subject) -->
-  <div class="col-12">
-    <input type="text" name="license" id="license" value="" placeholder="License Type" />
-  </div>
-
-  <!-- Address (replacing Message) -->
-  <div class="col-12">
-    <textarea name="address" id="address" placeholder="Enter your address" rows="6"></textarea>
-  </div>
-<div class="col-12">
-  <label for="document">Upload Documents:</label>
-  <input type="file" name="document[]" id="document" multiple />
-</div>
-  <!-- Submit Button -->
-  <div class="col-12">
-    <ul class="actions special">
-      <li><input type="submit" value="Send Message" /></li>
-    </ul>
-  </div>
-</div>
-
-						</form>
-					</div>
-					
-				</section>
 
 			<!-- Footer -->
 				<footer id="footer">
