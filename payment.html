@@ -60,13 +60,7 @@
     vertical-align: middle; /* Align in the middle */
     margin-top: 10px;
 }
-     .hidden { display: none; }
-    .box-container { display: flex; flex-wrap: wrap; gap: 20px; }
-    .box { border: 1px solid #ccc; padding: 20px; border-radius: 5px; flex: 1; min-width: 280px; }
-    .button { background-color: gray; color: white; padding: 10px 15px; border: none; cursor: pointer; border-radius: 4px; }
-    .payment-option { border: 1px solid #ddd; padding: 10px; margin-bottom: 10px; cursor: pointer; border-radius: 4px; }
-    .payment-option:hover { background-color: #f0f0f0; }
-    .back-button { margin-top: 10px; background-color: #999; }
+    
 			}
 </style>
 	</head>
@@ -102,42 +96,7 @@
 				</header>
 
 			<!-- Main -->
-				<section id="main" class="container">
-  <div class="row">
-
-    <!-- Left Box -->
-    <div class="col-4 col-12-mobile" style="border: 1px solid #ddd; padding: 20px;">
-      <h3>Payment Summary</h3>
-      <p>Total: RM38<br>Shipping: RM12<br>Fee: RM5<br><strong>Subtotal: RM55</strong></p>
-      <button id="payBtn" class="button small" style="background: gray; color: white;">Pay</button>
-    </div>
-
-    <!-- Middle Box: Payment Options -->
-    <div class="col-4 col-12-mobile" id="paymentOptions" style="display: none; border: 1px solid #ddd; padding: 20px;">
-      <h3>Choose Payment Method</h3>
-      <div class="method-box" onclick="selectPayment('master')">Master Card</div>
-      <div class="method-box" onclick="selectPayment('visa')">Visa</div>
-      <div class="method-box" onclick="selectPayment('paypal')">PayPal</div>
-      <div class="method-box" onclick="selectPayment('bank')">Local Bank</div>
-    </div>
-
-    <!-- Right Box: Card Details -->
-    <div class="col-4 col-12-mobile" id="cardModal" style="display: none; border: 1px solid #ddd; padding: 20px;">
-      <h3>Enter Card Details</h3>
-      <form>
-        <input type="text" placeholder="Name on Card" /><br><br>
-        <input type="text" placeholder="Card Number" /><br><br>
-        <input type="text" placeholder="MM/YY" style="width: 80px;" />
-        <input type="text" placeholder="CVV" style="width: 60px;" /><br><br>
-        <input type="text" placeholder="Postal Code" /><br><br>
-        <input type="submit" value="Submit Payment" class="button small" style="background: gray; color: white;" />
-        <br><br>
-        <button type="button" onclick="goBack()" class="button small">Back</button>
-      </form>
-    </div>
-
-  </div>
-</section>
+				
 
 
 			<!-- Footer -->
@@ -192,33 +151,7 @@
 			}
 		};
 	});
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const payBtn = document.getElementById("payBtn");
-    const paymentOptions = document.getElementById("paymentOptions");
-    const cardModal = document.getElementById("cardModal");
 
-    // Show payment methods box when "Pay" is clicked
-    payBtn.addEventListener("click", function () {
-      paymentOptions.style.display = "block";
-      cardModal.style.display = "none";
-    });
-
-    // Function to show card details form
-    window.selectPayment = function(method) {
-      if (method === "master") {
-        paymentOptions.style.display = "none";
-        cardModal.style.display = "block";
-      }
-    };
-
-    // Go back to payment options
-    window.goBack = function () {
-      cardModal.style.display = "none";
-      paymentOptions.style.display = "block";
-    };
-  });
-</script>
 
 
 
