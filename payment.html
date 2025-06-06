@@ -103,47 +103,42 @@
 
 			<!-- Main -->
 				<section id="main" class="container">
-    <div class="box-container">
+  <div class="row">
 
-      <!-- Left Summary Box -->
-      <div class="box">
-        <h3>Payment Summary</h3>
-        <p>Method: MasterCard (7463 **** **** 435)</p>
-        <p>Total: RM38<br>Shipping: RM12<br>Fee: RM5</p>
-        <p><strong>Subtotal: RM55</strong></p>
-        <button id="payBtn" class="button">Pay</button>
-      </div>
-
-      <!-- Middle Payment Options Box -->
-      <div class="box hidden" id="paymentMethods">
-        <h3>Select Payment Method</h3>
-        <div class="payment-option" onclick="openCardForm('MasterCard')">MasterCard</div>
-        <div class="payment-option" onclick="openCardForm('Visa')">Visa</div>
-        <div class="payment-option" onclick="openCardForm('PayPal')">PayPal</div>
-        <div class="payment-option" onclick="openCardForm('Local Bank')">Local Bank</div>
-      </div>
-
-      <!-- Right Card Detail Form -->
-      <div class="box hidden" id="cardForm">
-        <h3>Enter Card Details</h3>
-        <form id="paymentForm" action="payment-success.html" method="POST">
-          <label>Name on Card</label><br>
-          <input type="text" name="cardName" placeholder="John Doe" required><br><br>
-          <label>Card Number</label><br>
-          <input type="text" name="cardNumber" placeholder="XXXX XXXX XXXX XXXX" required><br><br>
-          <label>Expiration (MM/YY)</label><br>
-          <input type="text" name="expiry" placeholder="MM/YY" required><br><br>
-          <label>CVV</label><br>
-          <input type="text" name="cvv" placeholder="123" required><br><br>
-          <label>Postal Code</label><br>
-          <input type="text" name="postal" placeholder="12345" required><br><br>
-          <input type="submit" value="Pay Now" class="button"><br>
-          <button type="button" class="button back-button" onclick="goBack()">Back</button>
-        </form>
-      </div>
-
+    <!-- Left Box -->
+    <div class="col-4 col-12-mobile" style="border: 1px solid #ddd; padding: 20px;">
+      <h3>Payment Summary</h3>
+      <p>Total: RM38<br>Shipping: RM12<br>Fee: RM5<br><strong>Subtotal: RM55</strong></p>
+      <button id="payBtn" class="button small" style="background: gray; color: white;">Pay</button>
     </div>
-  </section>
+
+    <!-- Middle Box: Payment Options -->
+    <div class="col-4 col-12-mobile" id="paymentOptions" style="display: none; border: 1px solid #ddd; padding: 20px;">
+      <h3>Choose Payment Method</h3>
+      <div class="method-box" onclick="selectPayment('master')">Master Card</div>
+      <div class="method-box" onclick="selectPayment('visa')">Visa</div>
+      <div class="method-box" onclick="selectPayment('paypal')">PayPal</div>
+      <div class="method-box" onclick="selectPayment('bank')">Local Bank</div>
+    </div>
+
+    <!-- Right Box: Card Details -->
+    <div class="col-4 col-12-mobile" id="cardModal" style="display: none; border: 1px solid #ddd; padding: 20px;">
+      <h3>Enter Card Details</h3>
+      <form>
+        <input type="text" placeholder="Name on Card" /><br><br>
+        <input type="text" placeholder="Card Number" /><br><br>
+        <input type="text" placeholder="MM/YY" style="width: 80px;" />
+        <input type="text" placeholder="CVV" style="width: 60px;" /><br><br>
+        <input type="text" placeholder="Postal Code" /><br><br>
+        <input type="submit" value="Submit Payment" class="button small" style="background: gray; color: white;" />
+        <br><br>
+        <button type="button" onclick="goBack()" class="button small">Back</button>
+      </form>
+    </div>
+
+  </div>
+</section>
+
 
 			<!-- Footer -->
 				<footer id="footer">
@@ -197,26 +192,33 @@
 			}
 		};
 	});
- <script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
     const payBtn = document.getElementById("payBtn");
-    const paymentMethods = document.getElementById("paymentMethods");
-    const cardForm = document.getElementById("cardForm");
+    const paymentOptions = document.getElementById("paymentOptions");
+    const cardModal = document.getElementById("cardModal");
 
-    function openCardForm(method) {
-      paymentMethods.classList.add("hidden");
-      cardForm.classList.remove("hidden");
-    }
-
-    function goBack() {
-      cardForm.classList.add("hidden");
-      paymentMethods.classList.remove("hidden");
-    }
-
+    // Show payment methods box when "Pay" is clicked
     payBtn.addEventListener("click", function () {
-      paymentMethods.classList.remove("hidden");
-      cardForm.classList.add("hidden");
+      paymentOptions.style.display = "block";
+      cardModal.style.display = "none";
     });
-  </script>
+
+    // Function to show card details form
+    window.selectPayment = function(method) {
+      if (method === "master") {
+        paymentOptions.style.display = "none";
+        cardModal.style.display = "block";
+      }
+    };
+
+    // Go back to payment options
+    window.goBack = function () {
+      cardModal.style.display = "none";
+      paymentOptions.style.display = "block";
+    };
+  });
+</script>
 
 
 
