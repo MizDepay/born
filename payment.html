@@ -95,54 +95,49 @@
 				</header>
 
 			<!-- Main -->
-				<section id="main" class="container medium">
-					<header>
-						<h2>Payment</h2>
-						<p>Fees vary depending on the license type. Payments can be made online via credit/debit card or at designated payment counters..</p>
-					</header>
-					<div class="box">
-						<form method="post" action="#" enctype="multipart/form-data">
-							<div class="row gtr-50 gtr-uniform">
-  <!-- Name (unchanged) -->
-  <div class="col-6 col-12-mobilep">
-    <input type="text" name="name" id="name" value="" placeholder="Name" />
-  </div>
+				<section id="main" class="container">
+  <div class="row">
 
-  <!-- IC Number (replacing Email) -->
-  <div class="col-6 col-12-mobilep">
-    <input type="text" name="icnumber" id="icnumber" value="" placeholder="IC Number" />
-  </div>
+    <!-- Left Box: Summary & See All -->
+    <div class="col-4 col-12-mobile" style="border: 1px solid #ddd; padding: 20px;">
+      <h3>Payment Method</h3>
+      <div>
+        <input type="radio" name="summary-method" checked disabled> Master Card<br />
+        <span>7463 8472 8472 435</span>
+      </div>
+      <p>Total: RM38<br>Shipping Cost: RM12<br>Fee: RM5<br><strong>Subtotal: RM55</strong></p>
+      <button id="seeAllBtn" class="button small" style="background: gray; color: white;">See All</button>
+    </div>
 
-  <!-- Phone Number (new) -->
-  <div class="col-12">
-    <input type="text" name="phone" id="phone" value="" placeholder="Phone Number" />
-  </div>
+    <!-- Middle Box: Payment Methods (Hidden by default) -->
+    <div class="col-4 col-12-mobile" id="paymentOptions" style="border: 1px solid #ddd; padding: 20px; display: none;">
+      <h3>Choose Payment</h3>
+      <label><input type="radio" name="method" onclick="openCardModal()"> Master Card</label><br />
+      <label><input type="radio" name="method"> Visa (Not Registered)</label><br />
+      <label><input type="radio" name="method"> PayPal</label><br />
+      <label><input type="radio" name="method"> Local Bank</label>
+    </div>
 
-  <!-- License Type (replacing Subject) -->
-  <div class="col-12">
-    <input type="text" name="license" id="license" value="" placeholder="License Type" />
-  </div>
+    <!-- Right Box: Card Entry Modal -->
+    <div class="col-4 col-12-mobile" id="cardModal" style="border: 1px solid #ddd; padding: 20px; display: none;">
+      <h3>Enter Card Details</h3>
+      <form>
+        <label>Name on Card:</label><br />
+        <input type="text" placeholder="Name"><br />
+        <label>Card Number:</label><br />
+        <input type="text" placeholder="XXXX XXXX XXXX XXXX"><br />
+        <label>Expiration:</label>
+        <input type="text" placeholder="MM/YY" style="width: 60px;">
+        <label>CVV:</label>
+        <input type="text" placeholder="CVV" style="width: 60px;"><br />
+        <label>Postal Code:</label><br />
+        <input type="text" placeholder="Postal Code"><br /><br />
+        <input type="submit" value="Pay Now" class="button small" style="background: gray; color: white;">
+      </form>
+    </div>
 
-  <!-- Address (replacing Message) -->
-  <div class="col-12">
-    <textarea name="address" id="address" placeholder="Enter your address" rows="6"></textarea>
   </div>
-<div class="col-12">
-  <label for="document">Upload Documents:</label>
-  <input type="file" name="document[]" id="document" multiple />
-</div>
-  <!-- Submit Button -->
-  <div class="col-12">
-    <ul class="actions special">
-      <li><input type="submit" value="Send Message" /></li>
-    </ul>
-  </div>
-</div>
-
-						</form>
-					</div>
-					
-				</section>
+</section>
 
 			<!-- Footer -->
 				<footer id="footer">
@@ -196,6 +191,16 @@
 			}
 		};
 	});
+</script>
+		<script>
+  document.getElementById("seeAllBtn").addEventListener("click", function () {
+    const paymentOptions = document.getElementById("paymentOptions");
+    paymentOptions.style.display = paymentOptions.style.display === "none" ? "block" : "none";
+  });
+
+  function openCardModal() {
+    document.getElementById("cardModal").style.display = "block";
+  }
 </script>
 
 
