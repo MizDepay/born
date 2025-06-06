@@ -60,8 +60,77 @@
     vertical-align: middle; /* Align in the middle */
     margin-top: 10px;
 }
-    
-			}
+      font-family: Arial, sans-serif;
+      background: #f9f9f9;
+      margin: 0;
+      padding: 40px;
+    }
+
+    .container {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .box {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      width: 320px;
+    }
+
+    h3 {
+      margin-top: 0;
+    }
+
+    .button {
+      padding: 10px 20px;
+      background: gray;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .button:hover {
+      background: #333;
+    }
+
+    .payment-option {
+      border: 1px solid #ccc;
+      padding: 10px;
+      border-radius: 5px;
+      margin: 10px 0;
+      cursor: pointer;
+      text-align: center;
+    }
+
+    .payment-option:hover {
+      background-color: #f0f0f0;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    input[type="text"], input[type="email"] {
+      width: 100%;
+      padding: 8px;
+      margin: 5px 0 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .row {
+      display: flex;
+      gap: 10px;
+    }
+
+    .row input {
+      flex: 1;
+    }
 </style>
 	</head>
 	<body class="is-preload">
@@ -96,7 +165,56 @@
 				</header>
 
 			<!-- Main -->
-				
+				<section>
+					<div class="container">
+
+    <!-- Left Box -->
+    <div class="box">
+      <h3>Payment Summary</h3>
+      <p>Email: user@example.com</p>
+      <p>Total: RM38</p>
+      <p>Shipping: RM12</p>
+      <p>Fee: RM5</p>
+      <strong>Subtotal: RM55</strong><br><br>
+      <button class="button" onclick="showPaymentOptions()">Pay</button>
+    </div>
+
+    <!-- Payment Method Box -->
+    <div class="box hidden" id="paymentMethods">
+      <h3>Choose Payment Method</h3>
+      <div class="payment-option" onclick="showCardForm()">Card</div>
+      <div class="payment-option">Apple Pay</div>
+      <div class="payment-option">Google Pay</div>
+      <div class="payment-option">PayPal</div>
+    </div>
+
+    <!-- Card Details Box -->
+    <div class="box hidden" id="cardForm">
+      <h3>Card Payment</h3>
+      <form>
+        <input type="email" placeholder="Email address" required>
+        <input type="text" placeholder="Card number" required>
+        <div class="row">
+          <input type="text" placeholder="MM/YY" required>
+          <input type="text" placeholder="CVV" required>
+        </div>
+        <input type="text" placeholder="Cardholder name" required>
+        <input type="text" placeholder="Address line 1">
+        <input type="text" placeholder="State">
+        <div class="row">
+          <input type="text" placeholder="City">
+          <input type="text" placeholder="ZIP">
+        </div>
+        <input type="text" placeholder="Tax ID number (optional)">
+        <strong>Total: RM55</strong><br><br>
+        <button type="submit" class="button">Pay RM55</button>
+        <br><br>
+        <button type="button" class="button" onclick="goBack()">Back</button>
+      </form>
+    </div>
+
+  </div>
+				</section>
 
 
 			<!-- Footer -->
