@@ -269,6 +269,23 @@
 			}
 		};
 	});
+		</script>
+		 <script>
+    function showPaymentOptions() {
+      document.getElementById("paymentMethods").classList.remove("hidden");
+      document.getElementById("cardForm").classList.add("hidden");
+    }
+
+    function showCardForm() {
+      document.getElementById("paymentMethods").classList.add("hidden");
+      document.getElementById("cardForm").classList.remove("hidden");
+    }
+
+    function goBack() {
+      document.getElementById("paymentMethods").classList.remove("hidden");
+      document.getElementById("cardForm").classList.add("hidden");
+    }
+  </script>
 
 
 
