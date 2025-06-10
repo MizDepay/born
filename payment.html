@@ -281,51 +281,6 @@
     <button type="button" class="button" onclick="goBackToPayment()">Back</button>
   </form>
 </div>
-<script>
-  function showPaymentOptions() {
-    document.getElementById("mainBox").classList.add("hidden");
-    document.getElementById("paymentMethods").classList.remove("hidden");
-    hideAllMethods();
-  }
-
-  function showCardForm() {
-    hideAllMethods();
-    document.getElementById("cardForm").classList.remove("hidden");
-  }
-
-  function showApplePay() {
-    hideAllMethods();
-    document.getElementById("applePayBox").classList.remove("hidden");
-  }
-
-  function showTNG() {
-    hideAllMethods();
-    document.getElementById("tngBox").classList.remove("hidden");
-  }
-
-  function showPayPal() {
-    hideAllMethods();
-    document.getElementById("paypalBox").classList.remove("hidden");
-  }
-
-  function goBackToMain() {
-    document.getElementById("mainBox").classList.remove("hidden");
-    hideAllMethods();
-    document.getElementById("paymentMethods").classList.add("hidden");
-  }
-
-  function goBackToPayment() {
-    hideAllMethods();
-    document.getElementById("paymentMethods").classList.remove("hidden");
-  }
-
-  function hideAllMethods() {
-    document.getElementById("cardForm").classList.add("hidden");
-    document.getElementById("applePayBox").classList.add("hidden");
-    document.getElementById("tngBox").classList.add("hidden");
-    document.getElementById("paypalBox").classList.add("hidden");
-  }
-</script>
 
 
   </div>
@@ -389,23 +344,45 @@
   function showPaymentOptions() {
     document.getElementById("mainBox").classList.add("hidden");
     document.getElementById("paymentMethods").classList.remove("hidden");
-    document.getElementById("cardForm").classList.add("hidden");
+    hideAllMethods();
   }
 
   function showCardForm() {
-    document.getElementById("paymentMethods").classList.add("hidden");
+    hideAllMethods();
     document.getElementById("cardForm").classList.remove("hidden");
+  }
+
+  function showApplePay() {
+    hideAllMethods();
+    document.getElementById("applePayBox").classList.remove("hidden");
+  }
+
+  function showTNG() {
+    hideAllMethods();
+    document.getElementById("tngBox").classList.remove("hidden");
+  }
+
+  function showPayPal() {
+    hideAllMethods();
+    document.getElementById("paypalBox").classList.remove("hidden");
   }
 
   function goBackToMain() {
     document.getElementById("mainBox").classList.remove("hidden");
+    hideAllMethods();
     document.getElementById("paymentMethods").classList.add("hidden");
-    document.getElementById("cardForm").classList.add("hidden");
   }
 
   function goBackToPayment() {
+    hideAllMethods();
     document.getElementById("paymentMethods").classList.remove("hidden");
+  }
+
+  function hideAllMethods() {
     document.getElementById("cardForm").classList.add("hidden");
+    document.getElementById("applePayBox").classList.add("hidden");
+    document.getElementById("tngBox").classList.add("hidden");
+    document.getElementById("paypalBox").classList.add("hidden");
   }
 </script>
 
