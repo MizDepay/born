@@ -212,9 +212,9 @@
     <div class="box hidden" id="paymentMethods">
       <h3>Choose Payment Method</h3>
       <div class="payment-option" onclick="showCardForm()">Card</div>
-      <div class="payment-option">Apple Pay</div>
-      <div class="payment-option">Touch N GO</div>
-      <div class="payment-option">PayPal</div>
+      <div class="payment-option" onclick="showApplePay()">Apple Pay</div>
+      <div class="payment-option" onclick="showTNG()">Touch 'n Go</div>
+      <div class="payment-option" onclick="showPayPal()">PayPal</div>
 	 <br><br>
        <button type="button" class="button" onclick="goBackToMain()">Back</button>
 
@@ -244,6 +244,89 @@
       <button type="button" class="button" onclick="goBackToPayment()">Back</button>
       </form>
     </div>
+
+	<!-- Apple Pay Box -->
+<div class="box hidden" id="applePayBox">
+  <h3>Apple Pay</h3>
+  <form>
+    <input type="email" placeholder="Apple ID Email" required><br>
+    <input type="text" placeholder="Full Name" required><br>
+    <strong>Total: RM205</strong><br><br>
+    <button type="submit" class="button">Pay with Apple Pay</button>
+    <br><br>
+    <button type="button" class="button" onclick="goBackToPayment()">Back</button>
+  </form>
+</div>
+
+<!-- Touch 'n Go Box -->
+<div class="box hidden" id="tngBox">
+  <h3>Touch 'n Go</h3>
+  <form>
+    <input type="text" placeholder="Touch 'n Go Account Number" required><br>
+    <input type="text" placeholder="IC Number" required><br>
+    <strong>Total: RM205</strong><br><br>
+    <button type="submit" class="button">Pay with TnG</button>
+    <br><br>
+    <button type="button" class="button" onclick="goBackToPayment()">Back</button>
+  </form>
+</div>
+<!-- PayPal Box -->
+<div class="box hidden" id="paypalBox">
+  <h3>Pay with PayPal</h3>
+  <form>
+    <input type="email" placeholder="PayPal Email" required><br>
+    <strong>Total: RM205</strong><br><br>
+    <button type="submit" class="button">Pay with PayPal</button>
+    <br><br>
+    <button type="button" class="button" onclick="goBackToPayment()">Back</button>
+  </form>
+</div>
+<script>
+  function showPaymentOptions() {
+    document.getElementById("mainBox").classList.add("hidden");
+    document.getElementById("paymentMethods").classList.remove("hidden");
+    hideAllMethods();
+  }
+
+  function showCardForm() {
+    hideAllMethods();
+    document.getElementById("cardForm").classList.remove("hidden");
+  }
+
+  function showApplePay() {
+    hideAllMethods();
+    document.getElementById("applePayBox").classList.remove("hidden");
+  }
+
+  function showTNG() {
+    hideAllMethods();
+    document.getElementById("tngBox").classList.remove("hidden");
+  }
+
+  function showPayPal() {
+    hideAllMethods();
+    document.getElementById("paypalBox").classList.remove("hidden");
+  }
+
+  function goBackToMain() {
+    document.getElementById("mainBox").classList.remove("hidden");
+    hideAllMethods();
+    document.getElementById("paymentMethods").classList.add("hidden");
+  }
+
+  function goBackToPayment() {
+    hideAllMethods();
+    document.getElementById("paymentMethods").classList.remove("hidden");
+  }
+
+  function hideAllMethods() {
+    document.getElementById("cardForm").classList.add("hidden");
+    document.getElementById("applePayBox").classList.add("hidden");
+    document.getElementById("tngBox").classList.add("hidden");
+    document.getElementById("paypalBox").classList.add("hidden");
+  }
+</script>
+
 
   </div>
 				</section>
