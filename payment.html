@@ -131,6 +131,13 @@
     .row input {
       flex: 1;
     }
+	.pay-icon {
+  width: 24px;
+  height: 24px;
+  vertical-align: middle;
+  margin-right: 10px;
+}
+
 </style>
 	</head>
 	<body class="is-preload">
@@ -211,7 +218,9 @@
     <!-- Payment Method Box -->
     <div class="box hidden" id="paymentMethods">
       <h3>Choose Payment Method</h3>
-      <div class="payment-option" onclick="showCardForm()">Card</div>
+      <div class="payment-option" onclick="showCardForm()">
+    <img src="assets/images/card.png" alt="Card" class="pay-icon"> Card
+  </div>
       <div class="payment-option" onclick="showApplePay()">Apple Pay</div>
       <div class="payment-option" onclick="showTNG()">Touch 'n Go</div>
       <div class="payment-option" onclick="showPayPal()">PayPal</div>
