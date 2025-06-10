@@ -170,7 +170,8 @@
 
     <!-- Left Box -->
    <!-- Inside your .box -->
-<div class="box">
+<div class="box" id="mainBox">
+
   <h3>License Payment</h3>
 
   <table>
@@ -215,7 +216,8 @@
       <div class="payment-option">Google Pay</div>
       <div class="payment-option">PayPal</div>
 	 <br><br>
-        <button type="button" class="button" onclick="goBack()">Back</button>
+       <button type="button" class="button" onclick="goBackToMain()">Back</button>
+
     </div>
 
     <!-- Card Details Box -->
@@ -239,7 +241,7 @@
         <strong>Total: RM205</strong><br><br>
         <button type="submit" class="button">Pay RM205</button>
         <br><br>
-        <button type="button" class="button" onclick="goBack()">Back</button>
+      <button type="button" class="button" onclick="goBackToPayment()">Back</button>
       </form>
     </div>
 
@@ -300,22 +302,30 @@
 		};
 	});
 		</script>
-		 <script>
-    function showPaymentOptions() {
-      document.getElementById("paymentMethods").classList.remove("hidden");
-      document.getElementById("cardForm").classList.add("hidden");
-    }
+<script>
+  function showPaymentOptions() {
+    document.getElementById("mainBox").classList.add("hidden");
+    document.getElementById("paymentMethods").classList.remove("hidden");
+    document.getElementById("cardForm").classList.add("hidden");
+  }
 
-    function showCardForm() {
-      document.getElementById("paymentMethods").classList.add("hidden");
-      document.getElementById("cardForm").classList.remove("hidden");
-    }
+  function showCardForm() {
+    document.getElementById("paymentMethods").classList.add("hidden");
+    document.getElementById("cardForm").classList.remove("hidden");
+  }
 
-    function goBack() {
-      document.getElementById("paymentMethods").classList.remove("hidden");
-      document.getElementById("cardForm").classList.add("hidden");
-    }
-  </script>
+  function goBackToMain() {
+    document.getElementById("mainBox").classList.remove("hidden");
+    document.getElementById("paymentMethods").classList.add("hidden");
+    document.getElementById("cardForm").classList.add("hidden");
+  }
+
+  function goBackToPayment() {
+    document.getElementById("paymentMethods").classList.remove("hidden");
+    document.getElementById("cardForm").classList.add("hidden");
+  }
+</script>
+
 
 
 
