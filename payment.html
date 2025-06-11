@@ -159,6 +159,7 @@ form .button {
   height: 30px;
   vertical-align: middle;
   margin-right: 10px;
+
 }
 
 </style>
@@ -333,6 +334,24 @@ form .button {
   </form>
 </div>
 
+<div class="box hidden" id="maybank2uBox">
+  <p><center><img src="images/maybank.png" width="40" height="40"></center></p>
+  <h3>Maybank2U Payment</h3>
+  <p>Click below to proceed to the official Maybank2U site.</p>
+  <a href="https://www.maybank2u.com.my/" target="_blank" class="button">Proceed to Maybank2U</a>
+  <br><br>
+  <button type="button" class="button" onclick="goBackToPayment()">Back</button>
+</div>
+
+<div class="box hidden" id="cimbclicksBox">
+  <p><center><img src="images/cimb.png" width="40" height="40"></center></p>
+  <h3>CIMB Clicks</h3>
+  <p>Click below to proceed to the official CIMB Clicks site.</p>
+  <a href="https://www.cimbclicks.com.my/" target="_blank" class="button">Proceed to CIMB Clicks</a>
+  <br><br>
+  <button type="button" class="button" onclick="goBackToPayment()">Back</button>
+</div>
+
 
   </div>
 				</section>
@@ -417,6 +436,16 @@ form .button {
     hideAllMethods();
     document.getElementById("paypalBox").classList.remove("hidden");
   }
+  function showPMaybank2UForm() {
+  hideAllMethods();
+  document.getElementById("maybank2uBox").classList.remove("hidden");
+ }
+
+function showCimbclicksForm() {
+  hideAllMethods();
+  document.getElementById("cimbclicksBox").classList.remove("hidden");
+ }
+
 
   function goBackToMain() {
     document.getElementById("mainBox").classList.remove("hidden");
@@ -430,11 +459,14 @@ form .button {
   }
 
   function hideAllMethods() {
-    document.getElementById("cardForm").classList.add("hidden");
-    document.getElementById("applePayBox").classList.add("hidden");
-    document.getElementById("tngBox").classList.add("hidden");
-    document.getElementById("paypalBox").classList.add("hidden");
-  }
+  document.getElementById("cardForm").classList.add("hidden");
+  document.getElementById("applePayBox").classList.add("hidden");
+  document.getElementById("tngBox").classList.add("hidden");
+  document.getElementById("paypalBox").classList.add("hidden");
+  document.getElementById("maybank2uBox").classList.add("hidden");
+  document.getElementById("cimbclicksBox").classList.add("hidden");
+}
+
 </script>
 
 
