@@ -213,6 +213,14 @@
 		};
 	});
 </script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const fileInput = document.getElementById("document");
+    fileInput.addEventListener("change", function () {
+      alert(fileInput.files.length + " file(s) selected.");
+    });
+  });
+</script>
 
 
 
