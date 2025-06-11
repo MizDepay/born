@@ -68,6 +68,32 @@
 .button.gray:hover {
   background-color: #555 !important;
 }
+.badge {
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-weight: bold;
+  display: inline-block;
+  font-size: 0.9em;
+}
+
+.badge.completed {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.badge.pending {
+  background-color: #FFC107;
+  color: #000;
+}
+
+.badge.waiting {
+  background-color: #9E9E9E;
+  color: white;
+}
+.status-table tbody tr:hover {
+  background-color: #f9f9f9;
+  transition: 0.3s ease;
+}
 
 </style>
 	</head>
@@ -110,7 +136,8 @@
   </header>
 
   <div class="box">
-    <table style="width: 100%; border-collapse: collapse;">
+   <table class="status-table" style="width: 100%; border-collapse: collapse;">
+
       <thead>
         <tr style="background-color: #f2f2f2;">
           <th style="padding: 10px; border: 1px solid #ccc;">No</th>
