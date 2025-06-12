@@ -13,14 +13,8 @@
 
 		
 		<style>
-			@media (max-width: 400px) {
-  .row {
-    flex-direction: column;
-  }
-
-  .row input {
-    margin-bottom: 10px;
-  }
+			
+  
 }
     .modal {
         display: none;
@@ -155,16 +149,17 @@ form .button {
       border-radius: 5px;
     }
 
-   .row {
+  .row {
   display: flex;
   gap: 10px;
-  width: 100%; 
+  width: 100%;
 }
 
 .row input {
-  width: 100%;        
-  box-sizing: border-box; 
+  width: 100%;
+  box-sizing: border-box;
 }
+
 .box img {
   max-width: 100%;
   height: auto;
@@ -178,6 +173,17 @@ form .button {
   margin-right: 10px;
 
 }
+			@media (max-width: 480px) {
+  .row {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .row input {
+    margin-bottom: 10px;
+  }
+}
+
 
 </style>
 	</head>
