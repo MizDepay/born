@@ -61,17 +61,6 @@
     margin-top: 10px;
 }
 
-       body {
-      font-family: Arial;
-      padding: 20px;
-    }
-    .file-list {
-      margin-top: 15px;
-    }
-    .file-list li {
-      margin-bottom: 5px;
-    }
-
 </style>
 	</head>
 	<body class="is-preload">
@@ -233,30 +222,7 @@
   });
 </script>
 
-		 <script>
-    const input = document.getElementById("fileInput");
-    const list = document.getElementById("fileList");
-
-    // Array to hold selected files
-    const selectedFiles = [];
-
-    input.addEventListener("change", function () {
-      const file = this.files[0];
-      if (file) {
-        selectedFiles.push(file); // Save the file
-
-        // Update the list display
-        const listItem = document.createElement("li");
-        listItem.textContent = file.name;
-        list.appendChild(listItem);
-
-        // Reset the input to allow same file again
-        this.value = "";
-      }
-    });
-  </script>
-
-
+		
 
 
 <!-- Sign-Up Modal -->
